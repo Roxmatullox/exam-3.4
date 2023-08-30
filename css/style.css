@@ -20,6 +20,8 @@ header {
   left: 0;
   right: 0;
   background-color: white;
+}
+header nav {
   box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.1);
 }
 header .header-menu {
@@ -217,66 +219,72 @@ main {
     row-gap: 10px;
   }
 }
-.free-products-container .free-cards .free-card-1 {
+
+.free-card-1 {
   border-radius: 4px;
   background: var(--main-surface, #FFF);
   box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.1);
   width: 272px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.free-products-container .free-cards .free-card-1 .free-card-1-img {
+.free-card-1 .free-card-1-img {
   transition: 1s;
   height: 160px;
 }
-.free-products-container .free-cards .free-card-1 .free-card-1-img img {
+.free-card-1 .free-card-1-img img {
   width: 100%;
 }
-.free-products-container .free-cards .free-card-1:hover .free-card-1-img {
+.free-card-1:hover .free-card-1-img {
   padding: 10px;
   transition: 1s;
 }
-.free-products-container .free-cards .free-card-1:hover .free-card-1-img img {
+.free-card-1:hover .free-card-1-img img {
   width: 100%;
 }
-.free-products-container .free-cards .free-card-1 .free-card-1-text {
+
+.free-card-1-text {
   padding: 8px;
   display: flex;
   flex-direction: column;
   row-gap: 8px;
 }
-.free-products-container .free-cards .free-card-1 .free-card-1-text .free-card-price {
+.free-card-1-text .free-card-price {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.free-products-container .free-cards .free-card-1 .free-card-1-text .free-card-price h4 {
+.free-card-1-text .free-card-price h4 {
   color: var(--main-on-surface, #414141);
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
 }
-.free-products-container .free-cards .free-card-1 .free-card-1-text .free-card-price h5 {
+.free-card-1-text .free-card-price h5 {
   color: var(--grayscale-hardest, #606060);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
 }
-.free-products-container .free-cards .free-card-1 .free-card-1-text .free-card-price p {
+.free-card-1-text .free-card-price p {
   color: var(--grayscale-light, #BFBFBF);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
 }
-.free-products-container .free-cards .free-card-1 .free-card-1-text > p {
+.free-card-1-text > p {
   color: var(--main-on-surface, #414141);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 24px */
 }
-.free-products-container .free-cards .free-card-1 .free-card-1-text button {
+.free-card-1-text button {
   display: flex;
   color: #70C05B;
   padding: 8px;
@@ -289,7 +297,7 @@ main {
   border: 1px solid var(--main-secondary, #70C05B);
   transition: 1s;
 }
-.free-products-container .free-cards .free-card-1 .free-card-1-text button:hover {
+.free-card-1-text button:hover {
   background: #F63;
   color: #FFF;
   border: none;
@@ -829,4 +837,26 @@ footer .footer-container .footer-menu .phone-number {
   .footer-fixed {
     display: flex;
   }
+}
+
+.catalog {
+  height: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: white;
+  overflow: hidden;
+  transition: 3s;
+}
+
+.catalog-2 {
+  height: auto;
+  transition: 3s;
+}
+
+.catalog-container {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 30px;
 }

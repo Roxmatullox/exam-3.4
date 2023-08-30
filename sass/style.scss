@@ -16,7 +16,10 @@ header{
   left: 0;
   right: 0;
   background-color: white;
+
+  nav{
   box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.10);
+  }
   .header-menu{
     padding: 24px 0;
     display: flex;
@@ -235,94 +238,107 @@ main{
         row-gap: 10px;
       }
 
-      .free-card-1{
-        border-radius: 4px;
-        background: var(--main-surface, #FFF);
-        box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.10);
-        width: 272px;
+      
+    }
+  }
+}
 
 
-        .free-card-1-img{
-          transition: 1s;
-          height: 160px;
-          img{
-            width: 100%;
-          }
-        }
 
-        &:hover{
-          .free-card-1-img{
-            padding: 10px;
-            transition: 1s;
-            img{
-              width: 100%;
-            }
-          }
-        }
+.free-card-1{
+  border-radius: 4px;
+  background: var(--main-surface, #FFF);
+  box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.10);
+  width: 272px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-        .free-card-1-text{
-          padding: 8px;
-          display: flex;
-          flex-direction: column;
-          row-gap: 8px;
 
-          .free-card-price{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            h4{
-              color: var(--main-on-surface, #414141);
-              font-size: 18px;
-              font-style: normal;
-              font-weight: 700;
-              line-height: 150%; 
-            }
-            h5{
-              color: var(--grayscale-hardest, #606060);
-              font-size: 16px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 150%; 
-            }
+  .free-card-1-img{
+    transition: 1s;
+    height: 160px;
+    img{
+      width: 100%;
+    }
+  }
 
-            p{
-              color: var(--grayscale-light, #BFBFBF);
-              font-size: 12px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 150%; 
-            }
-          }
-
-          >p{
-            color: var(--main-on-surface, #414141);
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 150%; /* 24px */
-          }
-
-          button{
-            display: flex;
-            color: #70C05B;
-            padding: 8px;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            align-self: stretch;
-            background: none;
-            border-radius: 4px;
-            border: 1px solid var(--main-secondary, #70C05B);
-            transition: 1s;
-
-            &:hover{
-              background: #F63;
-              color: #FFF;
-              border: none;
-            }
-          }
-        }
+  &:hover{
+    .free-card-1-img{
+      padding: 10px;
+      transition: 1s;
+      img{
+        width: 100%;
       }
+    }
+  }
+
+  
+}
+
+
+
+
+.free-card-1-text{
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+
+  .free-card-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h4{
+      color: var(--main-on-surface, #414141);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; 
+    }
+    h5{
+      color: var(--grayscale-hardest, #606060);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; 
+    }
+
+    p{
+      color: var(--grayscale-light, #BFBFBF);
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; 
+    }
+  }
+
+  >p{
+    color: var(--main-on-surface, #414141);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+  }
+
+  button{
+    display: flex;
+    color: #70C05B;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    background: none;
+    border-radius: 4px;
+    border: 1px solid var(--main-secondary, #70C05B);
+    transition: 1s;
+
+    &:hover{
+      background: #F63;
+      color: #FFF;
+      border: none;
     }
   }
 }
@@ -951,4 +967,32 @@ footer{
     display: flex;
   }
 }
+
+
+
+
+
+
+
+.catalog{
+  height: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: white;
+  overflow: hidden;
+  transition: 3s;
+}
+
+.catalog-2{
+  height: auto;
+  transition: 3s;
+}
+
+.catalog-container{
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(4 ,1fr);
+  row-gap: 30px;
+  }
 
