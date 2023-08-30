@@ -137,3 +137,56 @@ special.map((el)=>{
 
 
 
+
+// stats //
+
+
+let statsRow = document.querySelector(".stat-cards")
+
+
+function statCard(el) {
+
+let statCardDiv = document.createElement("div")
+
+
+let statCard = document.createElement("div")
+statCard.className = "sats-card-1"
+statCardDiv.appendChild(statCard)
+
+let statCardImg = document.createElement("img")
+statCardImg.src = el.img
+statCard.append(statCardImg)
+
+let statCardText = document.createElement("div")
+statCardText.className = "sats-card-1-text"
+statCard.append(statCardText)
+
+let statCardDate = document.createElement("p")
+statCardDate.innerHTML = el.date
+statCardText.appendChild(statCardDate)
+
+let statCardTitle = document.createElement("h5")
+statCardTitle.innerHTML = el.title
+statCardText.appendChild(statCardTitle)
+
+
+let statCardAbout = document.createElement("p")
+statCardAbout.innerHTML = el.about
+statCardText.appendChild(statCardAbout)
+
+let buttonDiv = document.createElement("div")
+statCardText.appendChild(buttonDiv)
+
+let specialBtn = document.createElement("button")
+specialBtn.innerHTML = "Подробнее"
+buttonDiv.appendChild(specialBtn)
+
+return statCardDiv
+
+}
+
+
+stats.map((el)=>{
+  let n = statCard(el)
+  statsRow.appendChild(n)
+})
