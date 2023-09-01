@@ -996,3 +996,57 @@ footer{
   row-gap: 30px;
   }
 
+
+
+
+
+
+  .all-products{
+    padding: 10px 0;
+    background-color:#FCD5BA;
+
+    .all-products-number{
+      padding: 15px;
+      border-radius: 5px;
+      background-color: white;
+      margin-bottom: 10px; 
+    }
+
+      .all-product-cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-content: space-between;
+
+        >div{
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: center;
+          >div{
+            height: 100%;
+          }
+        }
+
+  
+        @media(max-width:1270px){
+          grid-template-columns: 1fr 1fr;
+        }
+  
+        @media(max-width:640px){
+          grid-template-columns: 1fr ;
+        }
+      }
+
+    .all-products-pagination{
+      display: flex;
+      justify-content: center;
+      button{
+        border-color: red;
+        padding: 10px;
+      }
+    }
+
+    .active{
+      background-color: red;
+      color: white;
+    }
+}

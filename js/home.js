@@ -190,3 +190,108 @@ stats.map((el)=>{
   let n = statCard(el)
   statsRow.appendChild(n)
 })
+
+
+
+
+
+
+let allProductsRow = document.querySelector(".all-product-cards")
+let productsNumber = document.querySelector(".products-number")
+let searchInput = document.querySelector(".search-input")
+let pagination = document.querySelector(".all-products-pagination")
+
+
+function allProducts(el) {
+  return `
+    <div>
+      <div class="free-card-1">
+        <div class="free-card-1-img">
+          <a href="pages/page.html">
+            <img src="${el.images[0]}" alt="" />
+          </a>
+        </div>
+        <div class="free-card-1-text">
+          <div class="free-card-price">
+            <div>
+              <h4>${el.price} ₽</h4>
+              <p>С картой</p>
+            </div>
+            <div>
+              <h5>${el.name}</h5>
+              <p>Обычная</p>
+            </div>
+          </div>
+          <p>${el.description}</p>
+          <img src="images/stars.svg" alt="" />
+          <button>В корзину</button>
+        </div>
+      </div>
+    </div>
+  `
+}
+
+let search = ""
+let active = 1
+
+
+function searchProducts() {
+  let results = products.filter((el)=>el.name.toLocaleLowerCase().includes(search))
+
+  let pages = Math.ceil(results.length/10)
+
+
+  if (pages>1) {
+    pagination.innerHTML = `<button onclick="activePage(${'+'})">
+      Previous
+    </button>`
+
+    for (let i = 1; i <= pages; i++) {
+      pagination.innerHTML += `<button onclick="activePage(${i})" class = ${i===active ? "active" : ""} >
+      ${i}
+    </button>`
+    }
+
+    pagination.innerHTML += `<button onclick="activePage(${'-'})">
+      Next
+    </button>`
+  } else {
+    pagination.innerHTML = ""
+  }
+
+  let start = (active-1)*10
+  let end = active*10
+
+  let resultsPage = results.slice(start,end)
+  
+  allProductsRow.innerHTML = "";
+
+  resultsPage.map((el)=>{ 
+    allProductsRow.innerHTML += allProducts(el)
+  })
+  
+  productsNumber.innerHTML = results.length
+}
+
+searchProducts()
+
+
+searchInput.addEventListener("keyup" , function(){
+  active = 1
+  search = this.value.trim().toLowerCase()
+  console.log(search);
+  searchProducts()
+})
+
+
+function activePage(i) {
+  if (i == '+') {
+    active++
+  } else if (i == '-') {
+    active--
+  } else {
+    active = i;
+  }
+
+  searchProducts()
+}
