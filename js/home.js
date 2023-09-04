@@ -82,15 +82,6 @@ oldProduct.map((el)=>{
 
 
 
-// kotelog //
-
-let headerBtn = document.querySelector(".header-left-btn")
-let Catelog = document.querySelector(".catalog")
-
-headerBtn.addEventListener("click",  () => {
-  Catelog.classList.toggle("catalog-2")
-})
-
 
 
 
@@ -224,7 +215,7 @@ function allProducts(el) {
           </div>
           <p>${el.description}</p>
           <img src="images/stars.svg" alt="" />
-          <button>В корзину</button>
+          <button onclick="addToCart(${el.id})" >В корзину</button>
         </div>
       </div>
     </div>
@@ -295,3 +286,26 @@ function activePage(i) {
 
   searchProducts()
 }
+
+
+
+
+
+
+
+
+function addToCart(id) {
+  let r = products.find((el)=>el.id === id)
+  let check = cart.find((el)=>el.id === id)
+
+  if (check) {
+    r.quantity++
+  } else {
+    r.quantity = 1
+    cart.push(r)
+  }
+
+  localStorage.setItem("cart" ,JSON.stringify(cart) )
+  total()
+}
+

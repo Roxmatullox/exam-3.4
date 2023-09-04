@@ -906,3 +906,11 @@ footer .footer-container .footer-menu .phone-number {
   background-color: red;
   color: white;
 }
+
+.productas-total {
+  padding: 4px 8px;
+  margin-left: 2px;
+  background-color: #F63;
+  color: white;
+  border-radius: 2px;
+}

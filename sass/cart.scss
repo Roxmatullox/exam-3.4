@@ -1,0 +1,132 @@
+@use  "./header-footer.scss";
+@use "./container" ;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+*,*::after,*::before{
+  box-sizing: border-box
+}
+
+
+
+.catalog{
+  height: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: white;
+  overflow: hidden;
+  transition: 3s;
+}
+
+.catalog-2{
+  height: auto;
+  transition: 3s;
+}
+
+.catalog-container{
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(4 ,1fr);
+  row-gap: 30px;
+}
+
+
+  .productas-total{
+    padding: 4px 8px;
+    margin-left: 2px;
+    background-color: #F63;
+    color: white;
+    border-radius: 2px;
+  }
+
+
+
+
+.cart{
+  padding: 20px;
+  &-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    .cart-card{
+      padding: 0 5px;
+      height: 72px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 4px;
+      background: var(--main-surface, #FFF);
+      box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.10);
+
+      .cart-card-left{
+        display: flex;
+        height: 100%;
+
+        img{
+          height: 100%;
+        }
+      }
+
+      .cart-card-text{
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        h4{
+          color: var(--main-on-surface, #414141);
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; 
+        }
+
+        h6{
+          color: var(--main-on-surface, #414141);
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 150%; 
+
+          span{
+            color: var(--grayscale-hardest, #606060);
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+          }
+        }
+      }
+
+      .cart-card-right{
+        display: flex;
+        align-items: center;
+        .cart-card-buttons{
+          display: flex;
+          align-items: center;
+          button{
+            background: var(--main-secondary, #70C05B);
+            padding: 5px 10px;
+            border: none;
+            color: white;
+          }
+        }
+
+        .cart-card-price{
+          margin-left: 24px;
+          h3{
+            color: var(--main-on-surface, #414141);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%; /* 27px */
+          }
+        }
+      }
+    }
+  }
+}
