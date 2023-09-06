@@ -1,0 +1,44 @@
+@use  "./header-footer.scss";
+@use "./container" ;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+*,*::after,*::before{
+  box-sizing: border-box
+}
+
+
+
+.catalog{
+  height: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: white;
+  overflow: hidden;
+  transition: 3s;
+}
+
+.catalog-2{
+  height: auto;
+  transition: 3s;
+}
+
+.catalog-container{
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(4 ,1fr);
+  row-gap: 30px;
+}
+
+
+  .productas-total{
+    padding: 4px 8px;
+    margin-left: 2px;
+    background-color: #F63;
+    color: white;
+    border-radius: 2px;
+  }

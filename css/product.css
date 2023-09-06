@@ -130,7 +130,7 @@ header .header-menu .header-right-2 button {
 }
 
 main {
-  padding-top: 99px;
+  padding-top: 120px;
   background: var(--main-bg-page, #FBF8EC);
 }
 
@@ -574,4 +574,13 @@ footer .footer-container .footer-menu .phone-number {
   background: #F63;
   color: #FFF;
   border: none;
+}
+
+.left-product {
+  max-width: 510px;
+  height: 510px;
+}
+.left-product img {
+  width: 100%;
+  height: 100%;
 }

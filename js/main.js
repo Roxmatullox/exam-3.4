@@ -20,3 +20,30 @@ function total() {
 }
 
 total()
+
+
+
+
+// favourite
+
+// let totalFavourite = document.querySelector(".favourite-total")
+
+// let JSONfavourite = localStorage.getItem("favourite")
+
+// let favourite = JSON.parse(JSONfavourite) || []
+
+// function Favouritetotal() {
+//   totalFavourite.innerHTML = favourite.length
+// }
+
+// Favouritetotal()
+
+
+// category
+
+let JSONcategory = localStorage.getItem("category")
+
+let category = JSON.parse(JSONcategory) || []
+
+
+

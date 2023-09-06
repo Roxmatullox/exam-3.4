@@ -192,13 +192,13 @@ let productsNumber = document.querySelector(".products-number")
 let searchInput = document.querySelector(".search-input")
 let pagination = document.querySelector(".all-products-pagination")
 
-
+// onclick = "addToFavourite(${el.id}) <---like 
 function allProducts(el) {
   return `
     <div>
-      <div class="free-card-1">
+      <div class="free-card-1"  onclick="addElementByCategory(${el.id})"> 
         <div class="free-card-1-img">
-          <a href="pages/page.html">
+          <a href="pages/page.html" )>
             <img src="${el.images[0]}" alt="" />
           </a>
         </div>
@@ -309,3 +309,61 @@ function addToCart(id) {
   total()
 }
 
+
+
+
+
+// favourite
+
+function addToFavourite(id) {
+  let r = products.find((el)=>el.id === id)
+  let check = favourite.find((el)=>el.id === id)
+  
+  if (check) {
+   
+  } else {
+    favourite.push(r)
+  }
+
+  localStorage.setItem("favourite" ,JSON.stringify(favourite) )
+  Favouritetotal()
+}
+
+
+
+
+
+// modal //
+let modal = document.querySelector(".modal")
+let openModal = document.querySelector(".modal-open")
+let closeModal = document.querySelector(".close")
+
+
+openModal.addEventListener("click" , function () {
+  modal.classList.add("modal-opened")
+})
+
+closeModal.addEventListener("click" , function () {
+  modal.classList.remove("modal-opened")
+})
+
+
+
+
+
+// category
+
+function addElementByCategory(id) {
+  category = []
+  let r = ""
+  products.map((el)=>{
+    if (el.id == id) {
+      r = el.category
+    }
+
+    if (el.category == r) {
+      category.push(el)
+    }
+  })
+  localStorage.setItem("category" ,JSON.stringify(category) )
+}
